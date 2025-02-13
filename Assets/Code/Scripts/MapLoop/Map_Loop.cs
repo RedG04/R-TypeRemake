@@ -30,6 +30,8 @@ public class Map_Loop : MonoBehaviour
         // Muove la mappa
         MoveRoads();
 
+        //Debug.Log(lastXPosition - Camera.main.transform.position.x);
+
         // Aggiungi nuovi segmenti se necessario
         if (lastXPosition - Camera.main.transform.position.x < 20f)
         {
@@ -55,7 +57,7 @@ public class Map_Loop : MonoBehaviour
     void AddRoadSegment()
     {
         GameObject newSegment = Instantiate(Road_Segments[Random.Range(0, Road_Segments.Length)]);
-        newSegment.transform.position = new Vector3(0f, 0f, lastXPosition + roadLength);
+        newSegment.transform.position = new Vector3(lastXPosition + roadLength, 0f, 0f );
         lastXPosition = newSegment.transform.position.x;
         activeRoads.Add(newSegment);
     }
