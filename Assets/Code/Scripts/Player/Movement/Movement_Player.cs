@@ -17,7 +17,7 @@ public class Movement_Player : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal"); // Asse X (destra/sinistra)
         float moveY = Input.GetAxisRaw("Vertical"); // Asse Y (su/giù)
 
-        // Create a vectro for the movement
+        // Create a vector for the movement
         Vector2 movement = new Vector2(moveX, moveY).normalized;
 
         // Movement to th rigidbody
