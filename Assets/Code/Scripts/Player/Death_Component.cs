@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class Death_Component : MonoBehaviour
 {
     [SerializeField] private EntityType type;
-    [SerializeField] private Vector3[] deathDirections;
+    [SerializeField] private Vector2[] deathDirections;
 
     public Action OnDeath;
 
-    public void Die(Vector3 direction)
+    public void Die(Vector2 direction)
     {
         foreach (var _direction in deathDirections)
         {
@@ -25,9 +25,6 @@ public class Death_Component : MonoBehaviour
             }
         }
     }
-
-    [SerializeField] private int amount = 200;
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
