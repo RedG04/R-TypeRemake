@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d127743dd696fe42bf2b3c507ed2936, type: 3}
-  m_Name: Wave_SO1
+  m_Name: WaveSO_3
   m_EditorClassIdentifier: 
-  MicroWave:
-  - Type: {fileID: 5233742529274114232, guid: 8dbdd611e0c558c4f809e9b80fb5f265, type: 3}
-    Quantity: 4
-    SpawnDelay: 1
+  enemyCount: 16
+  enemyPrefab: {fileID: 2114055360752604731, guid: cbf7f60f8c2d5794593523e9ee8788d8, type: 3}
+  spawnDelay: 0.5

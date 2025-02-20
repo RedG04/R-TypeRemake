@@ -4,31 +4,12 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using static Unity.Collections.AllocatorManager;
 
-public class Lateral_Movement : MonoBehaviour
+public class Enemy_Movement : MonoBehaviour
 {
-    private static Lateral_Movement instance;
-    public static Lateral_Movement Instance
-    {
-        get { return instance; }
-    }
-
-    private List<Lateral_Movement> enemy = new List<Lateral_Movement>();
-    public int ReturnEnemyCount()
-    {
-        return enemy.Count;
-    }
-
-    public void AddEnemy(Lateral_Movement bloon)
-    {
-        enemy.Add(bloon);
-    }
-
     [SerializeField] private float speed = 5f;
-
     [SerializeField] private LayerMask rayMask;
     [SerializeField] private float rayDistance = 5f;
 
-    public Transform _enemy;
     private BoxCollider2D _collider;
     private Rigidbody2D _rigidbody;
     private Vector2 _direction = Vector2.up;

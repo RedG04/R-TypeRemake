@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975900139279758516}
-  - component: {fileID: 4937905244320849270}
+  - component: {fileID: -4349230923530604619}
   - component: {fileID: 5233742529274114232}
   - component: {fileID: 150391140651934864}
   - component: {fileID: 6080662973610936773}
   - component: {fileID: 2838140454154483875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Type2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,14 +31,14 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.36, y: 1.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 336201362470554128}
   - {fileID: 6550876841217947954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4937905244320849270
+--- !u!114 &-4349230923530604619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,10 +47,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2114055360752604731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a62ee11aa3f0c40a366d7669fbb8f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 631765fe38a451c45b3a50dc0f94f282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  health: 1
 --- !u!114 &5233742529274114232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +66,8 @@ MonoBehaviour:
   speed: 2
   rayMask:
     serializedVersion: 2
-    m_Bits: 8
-  rayDistance: 0.6
-  _enemy: {fileID: 2975900139279758516}
+    m_Bits: 1024
+  rayDistance: 0.45
 --- !u!114 &150391140651934864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +83,7 @@ MonoBehaviour:
   muzzle: {fileID: 6550876841217947954}
   bulletDirection: 0
   bulletToSpawn: {fileID: 5145063250659382705, guid: a174ea3dcab64e34aa2bf69ed70d6193, type: 3}
-  fireRate: 1
+  fireRate: 3
 --- !u!61 &6080662973610936773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +145,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6550876841217947954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shooting_Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -199,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 336201362470554128}
   - component: {fileID: 8441799190651187786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

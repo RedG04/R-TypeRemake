@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6587703034300912878}
   - component: {fileID: 952308869743673874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5145063250659382705}
   - component: {fileID: 8372761303489997056}
   - component: {fileID: 270410035163559978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifeTime: 4
+  damage: 1
 --- !u!50 &8372761303489997056
 Rigidbody2D:
   serializedVersion: 5

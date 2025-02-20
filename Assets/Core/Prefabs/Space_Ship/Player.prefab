@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7037141703007929002}
-  - component: {fileID: -4399469121516412704}
   - component: {fileID: 4936995547752579699}
-  - component: {fileID: 6280367670525882451}
+  - component: {fileID: 6158860482996094994}
   - component: {fileID: 4731302227864074090}
   - component: {fileID: 2139060082572002369}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -31,26 +30,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: 0.84, y: 0.84, z: 0.84}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8016277215740642829}
   - {fileID: 7833064879029891821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4399469121516412704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115857793759821309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a62ee11aa3f0c40a366d7669fbb8f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 2
 --- !u!114 &4936995547752579699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!114 &6280367670525882451
+  muzzle: {fileID: 0}
+--- !u!114 &6158860482996094994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,13 +60,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2115857793759821309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efc706201a090a4b811808c71166f30, type: 3}
+  m_Script: {fileID: 11500000, guid: 90121887164eb24499ad708b29e5aef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  deathDirections:
-  - {x: 0, y: 1}
-  - {x: 0, y: -1}
+  health: 5
 --- !u!61 &4731302227864074090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833064879029891821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shooting_Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -194,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8016277215740642829}
   - component: {fileID: 986601794107248772}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

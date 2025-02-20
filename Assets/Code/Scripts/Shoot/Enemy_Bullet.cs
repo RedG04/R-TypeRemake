@@ -26,6 +26,26 @@ public class Enemy_Bullet : MonoBehaviour
         _spriteRenderer.flipY = direction.x > 0;
     }
 
+    public int damage = 1; // Danno inflitto dal proiettile
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.CompareTag("Player"))
+        {
+
+            other.GetComponent<Player_Health>().TakeDamage(damage);
+
+            // Distruggi il proiettile
+            Destroy(gameObject);
+        }
+        else
+        {
+            // Distruggi il proiettile
+            Destroy(gameObject);
+        }
+    }
     private void FixedUpdate() => _rigidbody.linearVelocity = _direction * speed;
 
     private void Update()
@@ -38,5 +58,4 @@ public class Enemy_Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) => Destroy(gameObject);
 }

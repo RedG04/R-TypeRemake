@@ -16,7 +16,7 @@ public class Round_SO : ScriptableObject
     {
         foreach (var wave in Waves)
         {
-            wave.InitializeBloonData();
+            wave.InitializeEnemy();
         }
     }
 

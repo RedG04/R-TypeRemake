@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2248b7f72ec1dcb47b946ab26245b91d, type: 3}
-  m_Name: Round_SO1
+  m_Script: {fileID: 11500000, guid: 2d127743dd696fe42bf2b3c507ed2936, type: 3}
+  m_Name: WaveSO_1
   m_EditorClassIdentifier: 
-  Waves:
-  - {fileID: 11400000, guid: 236f818770c9d4a4f8a634cb3aec82c6, type: 2}
+  enemyCount: 20
+  enemyPrefab: {fileID: 2114055360752604731, guid: 8dbdd611e0c558c4f809e9b80fb5f265, type: 3}
+  spawnDelay: 0.5
