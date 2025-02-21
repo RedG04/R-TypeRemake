@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631765fe38a451c45b3a50dc0f94f282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
 --- !u!114 &5233742529274114232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   speed: 2
   rayMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
   rayDistance: 0.45
 --- !u!114 &150391140651934864
 MonoBehaviour:

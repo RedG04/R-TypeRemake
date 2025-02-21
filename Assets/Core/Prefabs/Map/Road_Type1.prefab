@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7968555149045482295}
   - component: {fileID: 8232707138878650829}
   - component: {fileID: 3365355630088339571}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 6372072115836876661}
   - component: {fileID: 7600169345726320504}
   - component: {fileID: 5761770111545294086}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647702194657914048}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Road_Type1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

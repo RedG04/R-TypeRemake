@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d127743dd696fe42bf2b3c507ed2936, type: 3}
   m_Name: WaveSO_2
   m_EditorClassIdentifier: 
-  enemyCount: 18
+  enemyCount: 25
   enemyPrefab: {fileID: 2114055360752604731, guid: 4e423342c360ed148aa812564f487dea, type: 3}
-  spawnDelay: 0.5
+  spawnDelay: 0.2

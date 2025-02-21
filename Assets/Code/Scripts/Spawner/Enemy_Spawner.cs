@@ -34,6 +34,7 @@ public class Enemy_Spawner : MonoBehaviour
     {
         // Ottieni la wave corrente dal Round_SO
         _currentWave = roundSO.GetCurrentWave();
+        //Debug.Log("Wave corrente: " + _currentWave);
 
         if (_currentWave != null)
         {
@@ -67,6 +68,7 @@ public class Enemy_Spawner : MonoBehaviour
 
             // Passa alla wave successiva
             roundSO.MoveToNextWave();
+            //Debug.Log("Passando alla wave successiva. Wave index: " + roundSO._currentWaveIndex);
 
             // Se ci sono altre wave, inizia la prossima wave
             if (!roundSO.WavesEnded())

@@ -15,7 +15,7 @@ public class Movement_Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             muzzle.Fire();
         }
