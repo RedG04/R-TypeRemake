@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Enemy_Health : MonoBehaviour
 {
-    public int health = 3; // Salute del nemico
+    public int health = 3;
     public delegate void DeathHandler();
-    public event DeathHandler OnDeath; // Evento che segnala la morte del nemico
+    public event DeathHandler OnDeath;
 
-    // Questo metodo viene chiamato per infliggere danno al nemico
+    // This method is called to inflict damage to the enemy
     public void TakeDamage(int damage)
     {
         health -= damage;
 
-        // Se la salute arriva a 0 o meno, distruggi il nemico
+        // If health reaches 0, destroy the enemy
         if (health <= 0)
         {
             Die();
@@ -19,9 +19,9 @@ public class Enemy_Health : MonoBehaviour
         }
     }
 
-    // Metodo per distruggere il nemico (puoi aggiungere effetti o animazioni prima di distruggerlo)
+ 
     private void Die()
     {
-        Destroy(gameObject); // Distruggi il nemico
+        Destroy(gameObject); // Destroy the enemy
     }
 }

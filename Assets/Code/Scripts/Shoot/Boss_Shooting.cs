@@ -4,7 +4,7 @@ using Unity.Mathematics;
 
 public class Boos_Shooting : MonoBehaviour
 {
-    [SerializeField] private Transform[] muzzles; // Array di bocche di fuoco
+    [SerializeField] private Transform[] muzzles;
     [SerializeField] private Direction bulletDirection;
     [SerializeField] private Enemy_Bullet bulletToSpawn;
 
@@ -29,14 +29,11 @@ public class Boos_Shooting : MonoBehaviour
                     _ => throw new NotImplementedException(),
                 };
 
-                // Puoi usare la posizione locale del muzzle per gestire la direzione e il movimento
                // muzzle.localPosition = new Vector3(direction.x, 0f, muzzle.localPosition.z);
 
-                // Imposta la velocità del proiettile
                 bullet.SetVelocity(direction);
             }
 
-            // Reset del timer
             _currentTime = 0f;
         }
     }

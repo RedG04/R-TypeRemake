@@ -5,7 +5,7 @@ public class PlayAgain_W : MonoBehaviour
 {
     public void PlayGame()
     {
-        //if (Application.isPlaying) gameObject.SetActive(false);
+
         SceneManager.LoadScene(1);
         Debug.Log("play");
     }

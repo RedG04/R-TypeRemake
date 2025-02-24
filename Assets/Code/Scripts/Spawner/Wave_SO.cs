@@ -4,14 +4,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WaveData", menuName = "ScriptableObjects/WaveSO", order = 2)]
 public class Wave_SO : ScriptableObject
 {
-    public int enemyCount; // Numero di nemici da spawnare
-    public GameObject enemyPrefab; // Prefab del nemico
-    public float spawnDelay = 0.5f; // Ritardo tra i colpi di nemico
+    public int enemyCount; // Number of enemy to spawn
+    public GameObject enemyPrefab; // Prefab of the enemy
+    public float spawnDelay = 0.5f;
     private int _currentEnemyIndex = 0;
 
     public void InitializeEnemy()
     {
-        _currentEnemyIndex = 0; // Reset dell'indice nemico quando la wave inizia
+        _currentEnemyIndex = 0; // Reset of index enemy when the wave start
     }
 
     public bool AllWavesFinished() => _currentEnemyIndex >= enemyCount;

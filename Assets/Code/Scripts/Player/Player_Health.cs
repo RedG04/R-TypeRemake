@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class Player_Health : MonoBehaviour
 {
-    public int health = 5; // Salute del nemico
+    public int health = 5; 
 
-    // Questo metodo viene chiamato per infliggere danno al nemico
+ 
     public void TakeDamage(int damage)
     {
         health -= damage;
 
-        // Se la salute arriva a 0 o meno, distruggi il nemico
+        // If health reaches 0, destroy the player
+
         if (health <= 0)
         {
             Die();

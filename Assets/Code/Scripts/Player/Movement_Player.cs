@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Movement_Player : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Movement speed
+    public float moveSpeed = 5f;
     private Rigidbody2D _rigidbody;
     public Shooting muzzle;
 

@@ -1,39 +1,41 @@
 using System.Collections;
+using UnityEditor.Playables;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 public class Shooting : MonoBehaviour
 {
 
 
-    public GameObject bullet; // Il prefab del proiettile
-    public Transform muzzle; // La posizione da cui il proiettile verrà sparato
-    public float bulletForce; // La forza con cui il proiettile viene sparato
-    public float fireRate = 0.5f; // Il tempo di attesa tra i colpi
-    private bool canFire = true; // Controlla se il giocatore può sparare
+    public GameObject bullet; // The prefab of the bullet
+    public Transform muzzle;
+    public float bulletForce;
+    public float fireRate = 0.5f;
+    private bool canFire = true;
 
-    // Metodo per sparare
+
     public void Fire()
     {
-        if (canFire) // Verifica se è possibile sparare (controllo del delay)
+        if (canFire) // Check if you can shoot (delay check)
         {
             StartCoroutine(ShootWithDelay());
         }
     }
 
-    // Coroutine che gestisce il ritardo tra i colpi
+    // Coroutine that manages the delay between hits
     private IEnumerator ShootWithDelay()
     {
-        canFire = false; // Disabilita la possibilità di sparare immediatamente
+        canFire = false; // Disables the ability to shoot immediately
 
-        // Instanzia il proiettile e aggiunge la forza
+        // It instantiates the projectile and adds the force
         GameObject projectile = Instantiate(bullet, muzzle.position, muzzle.rotation);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         rb.AddForce(muzzle.right * bulletForce, ForceMode2D.Impulse);
 
-        // Aspetta il tempo di ritardo specificato prima di consentire un altro colpo
-        yield return new WaitForSeconds(fireRate);
+        // Waits the specified delay time before allowing another hit
+                yield return new WaitForSeconds(fireRate);
 
-        canFire = true; // Ora il giocatore può sparare di nuovo
+        canFire = true; // Now the player can shoot again
     }
 }
 

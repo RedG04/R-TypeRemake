@@ -16,9 +16,9 @@ public class Round_SO : ScriptableObject
     {
         if (_currentWaveIndex < Waves.Count)
         {
-            return Waves[_currentWaveIndex]; // Restituisce la wave corrente
+            return Waves[_currentWaveIndex];
         }
-        return null; // Nessuna wave disponibile
+        return null;
     }
 
     public void InitializeAllWaves()
@@ -41,6 +41,6 @@ public class Round_SO : ScriptableObject
 
     public bool WavesEnded()
     {
-        return _currentWaveIndex >= Waves.Count; // Controlla se tutte le wave sono terminate
+        return _currentWaveIndex >= Waves.Count; // Check if all waves are finished
     }
 }

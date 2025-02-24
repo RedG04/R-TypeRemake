@@ -11,7 +11,7 @@ public class Enemy_Bullet : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Vector2 _direction = Vector2.zero;
 
-    public int damage = 1; // Danno inflitto dal proiettile
+    public int damage = 1;
 
     private void Awake()
     {
@@ -32,11 +32,11 @@ public class Enemy_Bullet : MonoBehaviour
         {
             //Debug.Log("Proiettile ha colpito il player");
             other.GetComponent<Player_Health>().TakeDamage(damage);
-            Destroy(gameObject); // Distruggi il proiettile
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject); // Distruggi il proiettile
+            Destroy(gameObject);
         }
     }
 

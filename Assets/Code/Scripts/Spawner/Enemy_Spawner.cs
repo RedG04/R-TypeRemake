@@ -3,36 +3,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-    //[Header("Rounds Configuration")]
-    //public List<Round_SO> Rounds;
-    //public List<Transform> Spawns;
-
-    //private int _currentRoundIndex = 0;
-    //private Transform _spawnPoint;
-
-    //private Transform GetRandomSpawnpoint()
-    //{
-    //    int RandomIndex = Random.Range(0, Rounds.Count);
-    //    return Spawns[RandomIndex];
-    //}
 public class Enemy_Spawner : MonoBehaviour
 {
-    public Round_SO roundSO; // Oggetto che contiene le wave
-    public Transform[] spawnPoints; // Punti di spawn per i nemici
-    public float waveDelay = 2f; // Tempo di attesa tra una wave e l'altra
+    public Round_SO roundSO;
+    public Transform[] spawnPoints;
+    public float waveDelay = 2f;
 
     private Wave_SO _currentWave;
-    private List<GameObject> _activeEnemies = new List<GameObject>(); // Lista di nemici attivi
+    private List<GameObject> _activeEnemies = new List<GameObject>(); // List activ enemy
 
     void Start()
     {
-        roundSO.ResetWaveIndex(); // Reset dell'indice delle wave all'inizio
+        roundSO.ResetWaveIndex();
         StartCoroutine(SpawnWave());
     }
 
     private IEnumerator SpawnWave()
     {
-        // Ottieni la wave corrente dal Round_SO
         _currentWave = roundSO.GetCurrentWave();
         //Debug.Log("Wave corrente: " + _currentWave);
 
@@ -41,36 +28,33 @@ public class Enemy_Spawner : MonoBehaviour
             // Inizializza i dati della wave
             _currentWave.InitializeEnemy();
 
-            // Loop per spawnare tutti i nemici della wave
+            // Loop to spawn all enemies in the wave
             for (int i = 0; i < _currentWave.enemyCount; i++)
             {
-                // Ottieni un punto di spawn casuale
+                // Get a random spawnpoint
                 Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
-                // Instanzia il nemico
                 GameObject enemy = Instantiate(_currentWave.enemyPrefab, spawnPoint.position, Quaternion.identity);
 
-                // Aggiungi il nemico alla lista degli attivi
                 _activeEnemies.Add(enemy);
 
-                // Assicurati che il nemico invii un messaggio quando viene distrutto
+                // The enemey sends a massage when destroyed
                 enemy.GetComponent<Enemy_Health>().OnDeath += () => _activeEnemies.Remove(enemy);
 
-                // Ritardo tra i spawn
                 yield return new WaitForSeconds(_currentWave.spawnDelay);
             }
 
-            // Aspetta che tutti i nemici siano morti prima di passare alla wave successiva
+            // Wait until all enemys are dead before the next wave
             yield return new WaitUntil(() => _activeEnemies.Count == 0);
 
-            // Dopo che tutti i nemici sono morti, passa alla wave successiva
+            // After all enemies are dead, move on the next wave
             yield return new WaitForSeconds(waveDelay);
 
-            // Passa alla wave successiva
+            // Move on the next wave
             roundSO.MoveToNextWave();
             //Debug.Log("Passando alla wave successiva. Wave index: " + roundSO._currentWaveIndex);
 
-            // Se ci sono altre wave, inizia la prossima wave
+            // If there are wave, start the next wave
             if (!roundSO.WavesEnded())
             {
                 StartCoroutine(SpawnWave());

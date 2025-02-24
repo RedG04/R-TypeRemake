@@ -14,10 +14,12 @@ public class Enemy_Movement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Vector2 _direction = Vector2.up;
 
+    // Create a vector for the movement
     private Vector3 OffsetPosition => new(transform.position.x + ((_collider.size.x * 0) + 0) * _direction.x, transform.position.y + 0, 0);
 
     private void Awake()
     {
+        // Obtain the component Rigidbody2D and Collider2D
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
     }
