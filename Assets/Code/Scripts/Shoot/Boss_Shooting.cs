@@ -30,7 +30,7 @@ public class Boos_Shooting : MonoBehaviour
                 };
 
                 // Puoi usare la posizione locale del muzzle per gestire la direzione e il movimento
-                muzzle.localPosition = new Vector3(direction.x, 0f, muzzle.localPosition.z);
+               // muzzle.localPosition = new Vector3(direction.x, 0f, muzzle.localPosition.z);
 
                 // Imposta la velocità del proiettile
                 bullet.SetVelocity(direction);

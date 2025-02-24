@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 912575338914813780}
   - component: {fileID: -5518759252713147157}
   - component: {fileID: 4335365543284817373}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boss_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,6 +124,10 @@ PrefabInstance:
     - target: {fileID: 1877740161113332, guid: d17799e01588538449a360ded5bd038c, type: 3}
       propertyPath: m_Name
       value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877740161113332, guid: d17799e01588538449a360ded5bd038c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4936734725973052, guid: d17799e01588538449a360ded5bd038c, type: 3}
       propertyPath: m_LocalScale.x
