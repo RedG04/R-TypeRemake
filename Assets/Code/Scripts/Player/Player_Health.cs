@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Health : MonoBehaviour
 {
-    public int health = 5; 
+    public int health = 5;
+    [SerializeField] private Scene gameOver;
 
- 
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -19,6 +21,15 @@ public class Player_Health : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject); 
+        gameObject.SetActive(false);
+
+        // Attendi 3 secondi prima di cambiare scena
+        Invoke("LoadGameOverScene", 3f);
     }
+
+    private void LoadGameOverScene()
+    {
+        SceneManager.LoadScene(3);
+    }
+
 }
